@@ -10,7 +10,6 @@ import java.util.Map;
 import org.javabase.apps.entity.Cart;
 import org.javabase.apps.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +33,7 @@ public class CartController {
 	
 	@GetMapping(produces = "application/json")
 	@ApiOperation(value = "View a list of available cart",response = Cart.class)
-    public List<Cart> list(Model model){
+    public List<Cart> list(){
     	List<Cart> cart = service.findAll();
         return cart;
     }

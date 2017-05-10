@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+
 /**
  * @author 	Saurav Wahid <saurav1161@gail.com>
  * @version	1.0.0
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping({"/","shoprs"})
+@Api(value="onlinestore")
 public class IndexController{
 	
 	@GetMapping()

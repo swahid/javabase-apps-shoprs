@@ -10,7 +10,6 @@ import java.util.Map;
 import org.javabase.apps.entity.User;
 import org.javabase.apps.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -30,7 +28,6 @@ import io.swagger.annotations.ApiResponses;
  */
 @RestController
 @RequestMapping("shoprs/user")
-@Api(value="onlinestore", basePath="shoprs/")
 public class UserController {
 	
 	
@@ -46,7 +43,7 @@ public class UserController {
             @ApiResponse(code = 500, message = "Application Internal Error check error log")
     })
     @GetMapping(produces = "application/json")
-    public List<User> list(Model model){
+    public List<User> list(){
     	List<User> user = service.findAll();
         return user;
     }
